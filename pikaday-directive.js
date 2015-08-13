@@ -11,7 +11,6 @@ angular.module('pikaday', [])
         },
         require: 'ngModel',
         link: function ($scope, elem, attrs) {
-			debugger
             var options = {
                 field: elem[0],
                 defaultDate: $scope.date
@@ -29,10 +28,12 @@ angular.module('pikaday', [])
                 }
             };
 
-            var picker = new Pikaday(options);
+            object = this;
+            object.picker = new Pikaday(options);
+            elem[0].pickerObject = object;
 
             $scope.$on('$destroy', function() {
-                picker.destroy();
+                object.picker.destroy();
             });
         }
     };
