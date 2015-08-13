@@ -11,6 +11,7 @@ angular.module('pikaday', [])
         },
         require: 'ngModel',
         link: function ($scope, elem, attrs) {
+			debugger
             var options = {
                 field: elem[0],
                 defaultDate: $scope.date
