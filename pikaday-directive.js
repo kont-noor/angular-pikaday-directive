@@ -32,7 +32,7 @@ angular.module('pikaday', [])
             $scope.pikadayObject = new Pikaday(options);
 
             $scope.$on('$destroy', function() {
-                object.picker.destroy();
+                $scope.pikadayObject.destroy();
             });
         }
     };
